@@ -69,5 +69,5 @@ gulp.task('sprite:svg', function() {
 });
 
 gulp.task('sprite:svg:watch', function() {
-    gulp.watch(config.src.iconsSvg + '/*.svg', ['sprite:svg']);
+    gulp.watch(config.src.iconsSvg + '/*.svg', gulp.parallel('sprite:svg'));
 });
