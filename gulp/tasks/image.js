@@ -11,7 +11,19 @@ gulp.task('images', function(){
   console.log(config.src.img + '/*')
   return gulp.src(config.src.img + '/*')
     .pipe(newer(out))
-    .pipe(imagemin({ optimizationLevel: 5 }))
+    .pipe(imagemin([
+			imagemin.gifsicle({interlaced: true}),
+			imagemin.jpegtran({progressive: true}),
+			imagemin.optipng({
+				optimizationLevel: 7,
+				bitDepthReduction: true,
+				colorTypeReduction: true,
+				paletteReduction: true,
+				buffer: Buffer}),
+				imagemin.svgo({plugins: [{removeViewBox: true}]})
+		]), {
+		verbose: true
+	})
     .pipe(gulp.dest(out));
 });
 gulp.task('images:watch', function(){

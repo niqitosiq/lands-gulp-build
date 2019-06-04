@@ -1,0 +1,19 @@
+include _mixins
+doctype html
+html
+  head
+    include _head
+
+  body(class=bodyClass)
+    .out(class=outClass)
+      if !headerHide
+        block header
+          include ../partials/_header
+      block content
+      if !footerHide
+        block footer
+          include ../partials/_footer
+    block popup
+      include ../partials/_popup
+    block scripts
+      script(type="text/javascript" src="js/app.js")
