@@ -4,8 +4,8 @@ var gulp		 = require('gulp'),
 	postcss      = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
 	mqpacker     = require('css-mqpacker'),
-	config 		 = require('../config');
-
+	config 		 = require('../config'),
+    browserSync  = require('browser-sync').create();
 
 var processors = [
     autoprefixer({
@@ -28,7 +28,8 @@ gulp.task('sass', function(done) {
         .on('error', config.errorHandler)
         .pipe(postcss(processors))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(config.dest.css));
+        .pipe(gulp.dest(config.dest.css))
+
 });
 
 
