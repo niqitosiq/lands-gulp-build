@@ -73,22 +73,26 @@ html {
   box-sizing: inherit;
 }
 
-.icon-arrow {
-  width: 1.33em;
-  height: 1em;
-  fill: initial;
-}
-
-.icon-download {
+.icon {
+  display: inline-block;
   width: 1em;
   height: 1em;
-  fill: initial;
+  fill: currentColor;
 }
 
-.icon-seanlogo {
-  width: 4.44em;
-  height: 1em;
-  fill: initial;
+.icon-arr {
+  font-size: 1.4rem;
+  width: 1.35714em;
+}
+
+.icon-play {
+  font-size: 11.1rem;
+  width: 0.57658em;
+}
+
+.icon-quot {
+  font-size: 7.6rem;
+  width: 1.05263em;
 }
 
 @font-face {
@@ -98,82 +102,8 @@ html {
   font-style: normal;
 }
 
-@font-face {
-  font-family: CenturyGothic-Bold;
-  src: url("fonts/CenturyGothic-Bold.woff2") format("woff2"), url("fonts/CenturyGothic-Bold.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: FiraSans-Light;
-  src: url("fonts/FiraSans-Light.woff2") format("woff2"), url("fonts/FiraSans-Light.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-a, a:link, a:visited, a:hover, a:focus, a:active {
-  color: inherit;
-  text-decoration: none;
-}
-
-html p, html h3, html h2, html h1, html span {
-  max-height: 1000000px;
-}
-
-html {
-  width: 100%;
-  height: 100%;
-}
-
 body {
-  background: linear-gradient(to top, #182039 0%, #102038 50%, #131a31 100%);
-  font-size: 16px;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body.no-scroll {
-  overflow: hidden;
-}
-
-img {
-  pointer-events: none;
-}
-
-.out {
-  display: none;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  min-height: 100%;
-}
-
-.section, section {
-  max-width: 1300px;
-  padding-left: 15px;
-  width: 100%;
-  margin: auto;
-}
-
-* {
-  font-family: 'FiraSans-Regular', serif;
-}
-
-@media only screen and (max-width: 1419px) {
-  .section, section {
-    max-width: 960px;
-    padding-left: 0;
-  }
-}
-
-@media only screen and (max-width: 1023px) {
-  .section, section {
-    max-width: 90%;
-  }
+  background: #fff;
 }
 
 /*# sourceMappingURL=app.css.map */

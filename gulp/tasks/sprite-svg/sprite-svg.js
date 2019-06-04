@@ -4,27 +4,32 @@ var gulp        = require('gulp'),
 
 
 gulp.task('sprite:svg', function() {
+  console.log("/" + config.src.iconsSvg + "/")
+  console.log("/" + config.src.iconsSvg + '/same.scss')
     return gulp.src(config.src.iconsSvg + '/*.svg')
         .pipe(svgSprite(
             {
-                shape: {
-                  dimension: { 
-                    maxWidth: 32,
-                    maxHeight: 32
-                  },
-                  spacing: { 
-                    padding: 10
-                  },
-                  dest: '/int'
-                },
                 mode: {
-                  view: {
-                    bust: false,
+                  stack: {
+                    sprite: "../sprite.svg",
                     render: {
-                      scss: true
+                      scss: {
+                        dest: '../../../src/sass/generated/_sprite-svg.scss', 
+                        template: config.src.iconsSvg + "/temp.scss"
+                      }
                     }
+                    
                   },
-                  symbol: true
+                },
+                svg: {
+                },
+                shape: {
+                  dimension: {
+                    attributes: true,
+                  },
+                  spacing: {
+                    box: "padding"
+                  }
                 }
             }
         ))
