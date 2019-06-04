@@ -1,45 +1,34 @@
-var gulp        = require('gulp');
-var plumber     = require('gulp-plumber');
-var svgmin      = require('gulp-svgmin');
-var svgStore    = require('gulp-svgstore');
-var rename      = require('gulp-rename');
-var through2    = require('through2');
-var consolidate = require('gulp-consolidate');
-var config      = require('../../config');
-var cheerio   = require('gulp-cheerio');
+var gulp        = require('gulp'),
+    svgSprite   = require('gulp-svg-sprite'),
+    config      = require('../../config');
+
+
 gulp.task('sprite:svg', function() {
-    return gulp.src(config.src.iconsSvg + '/self/*.svg')
-            .pipe(
-                svgmin({
-                    js2svg: {
-                        pretty: true
-                    }
-                }))
-            .pipe(
-                cheerio({
-                    run: function ($) {
-                        $('[fill]').removeAttr('fill');
-                        $('[stroke]').removeAttr('stroke');
-                        $('[style]').removeAttr('style');
-                    },
-                    parserOptions: {xmlMode: true}
-                })
-            )
-            .pipe(replace('&gt;', '>'))
-            .pipe(svgSprite({
+    return gulp.src(config.src.iconsSvg + '/*.svg')
+        .pipe(svgSprite(
+            {
+                shape: {
+                  dimension: { 
+                    maxWidth: 32,
+                    maxHeight: 32
+                  },
+                  spacing: { 
+                    padding: 10
+                  },
+                  dest: '/int'
+                },
                 mode: {
-                    symbol: {
-                        sprite: "../sprite.svg",
-                        render: {
-                            scss: {
-                                dest: config.src.sassGen + '/_sprite.scss',
-                                template: config.src.sass + "sass/templates/_sprite_template.scss"
-                            }
-                        }
+                  view: {
+                    bust: false,
+                    render: {
+                      scss: true
                     }
+                  },
+                  symbol: true
                 }
-            }))
-            .pipe(gulp.dest(config.src.iconsSvg + "/"));
+            }
+        ))
+        .pipe(gulp.dest(config.dest.img));
 
 });
 

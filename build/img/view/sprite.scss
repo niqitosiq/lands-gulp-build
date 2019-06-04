@@ -1,0 +1,34 @@
+%svg-common {
+	background: url("svg/sprite.view.svg") no-repeat;
+}
+
+.svg-arr {
+	@extend %svg-common;
+	background-position: 0 100%;
+}
+
+.svg-arr-dims {
+	width: 39px;
+	height: 34px;
+}
+
+.svg-play {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.svg-play-dims {
+	width: 38.45px;
+	height: 52px;
+}
+
+.svg-quot {
+	@extend %svg-common;
+	background-position: 98.5897435897436% 0;
+}
+
+.svg-quot-dims {
+	width: 52px;
+	height: 50.4px;
+}
+
