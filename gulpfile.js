@@ -2,6 +2,8 @@
 require('./gulp/tasks/sass')
 require('./gulp/tasks/image')
 require('./gulp/tasks/js')
+require('./gulp/tasks/svg')
+require('./gulp/tasks/sprite-svg/sprite-svg')
 require('./gulp/tasks/build')
 require('./gulp/tasks/server')
 require('./gulp/tasks/watch')
