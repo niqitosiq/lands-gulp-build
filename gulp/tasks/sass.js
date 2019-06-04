@@ -17,7 +17,7 @@ var processors = [
 ];
 
 
-gulp.task('sass', function() {
+gulp.task('sass', function(done) {
     return gulp
         .src(config.src.sass + '/*.{sass,scss}')
         .pipe(sourcemaps.init())

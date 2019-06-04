@@ -1,9 +1,6 @@
-var gulp        = require('gulp');
-var config      = require('../config');
+var gulp         = require('gulp'),
+    config       = require('../config');
 
-gulp.task('build', function(cb) {
-    gulp.series(
-        'sass',
-        cb
-    );
-});
+gulp.task('build',
+    gulp.series('sass', 'images')
+);
