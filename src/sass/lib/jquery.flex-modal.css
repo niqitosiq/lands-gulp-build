@@ -1,0 +1,68 @@
+/* set this class to hide modals on pageload */
+/* use your existing modifiers if you can */
+.flex-modal-hide {
+    display: none;
+}
+
+.flex-modal-item {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 10000;
+    opacity: 0;
+    display: none;
+    /* make sure to use at least tiny transition-duration so a transitionend event can fire */
+    transition: opacity .1s;
+}
+.flex-modal-item--ready {
+    display: flex;
+}
+.flex-modal-item--visible {
+    opacity: 1;
+}
+
+.flex-modal-item__content {
+    position: relative;
+    display: flex;
+    min-width: 200px;
+    max-width: 600px;
+    max-height: 90%;
+    margin: 15px;
+    border-radius: 3px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .25);
+    background: #fff;
+}
+.flex-modal-item__content-inner {
+    padding: 25px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.flex-modal-item__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    color: #333;
+    font-size: 12px;
+    background-color: #ebebeb;
+    border: 0;
+    border-radius: 3px;
+}
+
+@media ( min-width: 768px ) {
+    .flex-modal-item__content-inner {
+        width: 100%;
+        padding: 30px 40px 30px 30px;
+    }
+    .flex-modal-item__close {
+        top: 20px;
+        right: 20px;
+    }
+}

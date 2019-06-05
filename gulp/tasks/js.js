@@ -6,7 +6,7 @@ var gulp         = require('gulp'),
 
 
 gulp.task('js', function (done) {
-	return gulp.src([config.src.js+'/libs/*.js', config.src.js+'/*.js'])
+	return gulp.src([config.src.js+'/jquery.js', config.src.js+'/libs/*.js', config.src.js+'/*.js'])
 		.pipe(concat('script.js'))
         .pipe(uglify())
         .pipe(gulp.dest(config.dest.js+'/'));
