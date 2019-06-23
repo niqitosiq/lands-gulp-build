@@ -8,8 +8,8 @@ var gulp		= require("gulp"),
 // image processing
 gulp.task('images', function(){
   const out = config.dest.root + '/img';
-  console.log(config.src.img + '/*')
-  return gulp.src(config.src.img + '/*')
+  console.log(config.src.img + '/**/*')
+  return gulp.src(config.src.img + '/**/*')
     .pipe(newer(out))
     .pipe(imagemin([
 			imagemin.gifsicle({interlaced: true}),

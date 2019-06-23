@@ -25,7 +25,7 @@ gulp.task('sprite:svg', function() {
                 },
                 shape: {
                   dimension: {
-                    attributes: true,
+                    attributes: false,
                   },
                   spacing: {
                     box: "padding"
