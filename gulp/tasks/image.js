@@ -11,6 +11,7 @@ gulp.task('images', function(){
   console.log(config.src.img + '/**/*')
   return gulp.src(config.src.img + '/**/*')
     .pipe(newer(out))
+    /*
     .pipe(imagemin([
 			imagemin.gifsicle({interlaced: true}),
 			imagemin.jpegtran({progressive: true}),
@@ -23,7 +24,7 @@ gulp.task('images', function(){
 				imagemin.svgo({plugins: [{removeViewBox: true}]})
 		]), {
 		verbose: true
-	})
+	})*/
     .pipe(gulp.dest(out));
 });
 gulp.task('images:watch', function(){
