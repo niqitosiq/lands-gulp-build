@@ -64,7 +64,7 @@
     "require-dir": "^1.2.0",
     "rupture-sass": "^0.3.0",
     "svg4everybody": "^2.1.9",
-    "swiper": "^5.2.0",
+    "swiper": "^6.5.1",
     "through2": "^3.0.1",
     "webpack": "^4.41.2",
     "webpack-stream": "^5.2.1"
