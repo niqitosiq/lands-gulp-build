@@ -24,7 +24,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.27.10",
     "css-mqpacker": "^7.0.0",
     "fastclick": "^1.0.6",
     "fontfacegen": "^0.3.1",
